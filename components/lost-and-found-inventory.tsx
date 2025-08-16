@@ -119,13 +119,12 @@ export function LostAndFoundInventory() {
         student_id: newItemStudentId, // เก็บรหัสนักเรียนไว้ใน Supabase
       }
 
-      const { error } = await supabase.from("lost_items").insert([newItem]).select()
+      const { student_id, ...itemWithoutStudentId } = newItem
+
+      const { error } = await supabase.from("lost_items").insert([itemWithoutStudentId]).select()
 
       if (error) {
         if (error.message.includes("student_id")) {
-          const itemWithoutStudentId = { ...newItem }
-          delete itemWithoutStudentId.student_id
-
           const { error: fallbackError } = await supabase.from("lost_items").insert([itemWithoutStudentId]).select()
 
           if (fallbackError) {
