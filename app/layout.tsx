@@ -4,9 +4,11 @@ import { GeistMono } from 'geist/font/mono'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.app',
+  title: 'PCCM|ของหาย',
+  description: 'Created with Piphat',
+  icons: {
+    icon: "/favicon.ico"
+  },
 }
 
 export default function RootLayout({
