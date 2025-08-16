@@ -7,7 +7,9 @@ export const metadata: Metadata = {
   title: 'PCCM|ของหาย',
   description: 'Created with Piphat',
   icons: {
-    icon: "/favicon.ico"
+    icon: [
+      { url: '/favicon.ico?v=3', sizes: 'any' },    
+    ],
   },
 }
 
